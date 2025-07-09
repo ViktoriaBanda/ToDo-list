@@ -1,0 +1,48 @@
+.menu {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+
+    font-size: 14px;
+    color: #787E9C;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    color: #787E9C;
+    padding: 8px 4px;
+    font-family: "Montserrat", sans-serif;
+
+    white-space: nowrap;
+
+    &.active {
+        border-bottom: 2px solid #4C54F4;
+        font-weight: 500;
+        color: #21252A;
+    }
+}
+
+.clear {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    color: #4c54f4;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
