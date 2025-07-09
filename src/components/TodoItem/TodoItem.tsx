@@ -9,21 +9,28 @@ interface Props {
     onRemove: () => void;
 }
 
-const TodoItem: React.FC<Props> = ({ id, text, completed, onToggle, onRemove }) => {
+const TodoItem: React.FC<Props> = ({id, text, completed, onToggle, onRemove}) => {
     return (
         <div className={styles.item} onClick={onToggle}>
             <div className={styles.checkbox}>
                 <input type="checkbox"
                        id={`completed-${id}`}
                        checked={completed}
-                       onChange={() => {}}/>
-                <label htmlFor={`completed-${id}`} className={completed ? styles.completed : ''} >{text}</label>
+                       onChange={() => {
+                       }}/>
+                <label htmlFor={`completed-${id}`} className={completed ? styles.completed : ''}>{text}</label>
             </div>
-            <span className={styles.delete} onClick={(event) =>  {
-                event.stopPropagation(); onRemove();
+            <button type="button" className={styles.delete} onClick={(event) => {
+                event.stopPropagation();
+                onRemove();
             }}>
-        ✖
-      </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                     viewBox="0 0 25 25" fill="none" className="close ng-star-inserted">
+                    <path d="M7.5 7.5L17.5 17.5M7.5 17.5L17.5 7.5"
+                          stroke="#FC5A5A" strokeWidth="1.8" strokeLinecap="round"
+                    />
+                </svg>
+            </button>
         </div>
     );
 };

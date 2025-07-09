@@ -22,8 +22,6 @@
 
 .delete {
     cursor: pointer;
-    color: #FC5A5A;
-    font-size: 18px;
 
     @media (hover: hover) {
         &:hover {
@@ -41,19 +39,11 @@
 
         &:checked + label {
             &:before {
-                background-color: #4C54F4;
+                background-color: #56BD6A;
                 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.3332 1L4.99984 8.33333L1.6665 5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
                 background-repeat: no-repeat;
                 background-position: center;
-                border-color: #4C54F4;
-            }
-        }
-
-        @media (hover: hover) {
-            &:hover + label {
-                &:before {
-                    border-color: #4C54F4;
-                }
+                border-color: #56BD6A;
             }
         }
     }
@@ -77,14 +67,6 @@
             border-radius: 4px;
             left: 0;
             top: 0;
-        }
-
-        @media (hover: hover) {
-            &:hover {
-                &:before {
-                    border-color: #4C54F4;
-                }
-            }
         }
     }
 }

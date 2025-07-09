@@ -27,14 +27,16 @@ const TodoInput: React.FC<Props> = ({onAdd}) => {
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                     />
-                    <button type="button" className={styles.clear} onClick={() => setText('')}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                             viewBox="0 0 25 25" fill="none" className="close ng-star-inserted">
-                            <path
-                                d="M16.5 16.7617L12.5 12.7617M12.5 12.7617L8.5 8.76172M12.5 12.7617L16.5 8.76172M12.5 12.7617L8.5 16.7617"
-                                stroke="#FC5A5A"></path>
-                        </svg>
-                    </button>
+                    { text && (
+                        <button type="button" className={styles.clear} onClick={() => setText('')}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                 viewBox="0 0 25 25" fill="none" className="close ng-star-inserted">
+                                <path
+                                    d="M16.5 16.7617L12.5 12.7617M12.5 12.7617L8.5 8.76172M12.5 12.7617L16.5 8.76172M12.5 12.7617L8.5 16.7617"
+                                    stroke="#FC5A5A"></path>
+                            </svg>
+                        </button>
+                    )}
                 </div>
                 <button type="submit" className={styles.add}
                         disabled={!text.trim()}
