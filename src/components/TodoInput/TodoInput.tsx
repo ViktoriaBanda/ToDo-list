@@ -37,8 +37,8 @@ const TodoInput: React.FC<Props> = ({onAdd}) => {
                     </button>
                 </div>
                 <button type="submit" className={styles.add}
-                        disabled={!text.trim()}>
-                    Добавить
+                        disabled={!text.trim()}
+                        data-label="Добавить">
                 </button>
             </div>
         </form>

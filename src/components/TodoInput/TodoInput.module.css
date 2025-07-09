@@ -10,18 +10,6 @@ form {
     gap: 10px;
 
     position: relative;
-
-    input {
-        width: 100%;
-        padding: 15px;
-        font-family: "Montserrat", sans-serif;
-        font-size: 16px;
-        font-weight: 300;
-        border: 0;
-        background: #fff;
-        outline: none;
-        border-radius: 8px;
-    }
 }
 
 .inputField {
@@ -30,7 +18,16 @@ form {
 
     input {
         width: 100%;
-        padding-right: 40px;
+        padding: 15px 40px 15px 15px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        border: 0;
+        background: #fff;
+        outline: none;
+        border-radius: 8px;
+
+        height: 48px;
     }
 }
 
@@ -45,9 +42,14 @@ form {
     background: #4C54F4;
     color: #fff;
 
-    @media (hover: hover) {
-        &:hover:not(:disabled) {
-            opacity: 0.9;
+    height: 48px;
+
+    &::after {
+        content: attr(data-label);
+
+        @media (max-width: 480px) {
+            content: '+';
+            font-size: 24px;
         }
     }
 
@@ -56,6 +58,12 @@ form {
         cursor: default;
         opacity: 1;
         background-color: #787E9C4D;
+    }
+
+    @media (hover: hover) {
+        &:hover:not(:disabled) {
+            opacity: 0.9;
+        }
     }
 }
 

@@ -15,7 +15,7 @@ export function useTodos() {
 
     const addTodo = useCallback((text: string) => {
         if (!text.trim()) return;
-        setTodos(prev => [...prev, { id: uuid(), text: text.trim(), completed: false }]);
+        setTodos(prev => [{ id: uuid(), text: text.trim(), completed: false }, ...prev]);
     }, []);
 
     const toggleTodo = useCallback((id: string) => {

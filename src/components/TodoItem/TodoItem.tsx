@@ -15,7 +15,8 @@ const TodoItem: React.FC<Props> = ({ id, text, completed, onToggle, onRemove }) 
             <div className={styles.checkbox}>
                 <input type="checkbox"
                        id={`completed-${id}`}
-                       checked={completed}/>
+                       checked={completed}
+                       onChange={() => {}}/>
                 <label htmlFor={`completed-${id}`} className={completed ? styles.completed : ''} >{text}</label>
             </div>
             <span className={styles.delete} onClick={(event) =>  {
