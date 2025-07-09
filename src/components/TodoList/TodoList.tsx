@@ -1,12 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 import styles from './TodoList.module.css';
-
-interface Todo {
-    id: string;
-    text: string;
-    completed: boolean;
-}
+import { Todo } from "../../hooks/useTodos";
 
 interface Props {
     todos: Todo[];
@@ -16,11 +11,13 @@ interface Props {
 }
 
 const TodoList: React.FC<Props> = ({ todos, onToggle, onRemove, filter }) => {
-    const filtered = todos.filter((todo) => {
-        if (filter === 'active') return !todo.completed;
-        if (filter === 'completed') return todo.completed;
-        return true;
-    });
+    const filtered = useMemo(() => {
+        return todos.filter((todo) => {
+            if (filter === 'active') return !todo.completed;
+            if (filter === 'completed') return todo.completed;
+            return true;
+        });
+    }, [todos, filter]);
 
     return (
         <div className={styles.list}>

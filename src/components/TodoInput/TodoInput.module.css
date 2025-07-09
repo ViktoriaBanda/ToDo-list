@@ -48,13 +48,6 @@ form {
         content: attr(data-label);
     }
 
-    @media (max-width: 480px) {
-        &::after {
-            content: '+';
-            font-size: 24px;
-        }
-    }
-
     &:disabled {
         pointer-events: none;
         cursor: default;
@@ -79,5 +72,12 @@ form {
         &:hover {
             opacity: 0.8;
         }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .add::after {
+        content: '+';
+        font-size: 24px;
     }
 }

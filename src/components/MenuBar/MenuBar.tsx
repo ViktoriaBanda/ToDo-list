@@ -1,11 +1,6 @@
 import React from 'react';
 import styles from './MenuBar.module.css';
 
-interface Todo {
-    id: string;
-    completed: boolean;
-}
-
 interface Props {
     activeCount: number;
     onClearCompleted: () => void;

@@ -31,8 +31,8 @@ describe('TodoItem', () => {
     test('клик по карточке вызывает onToggle', () => {
         render(<TodoItem {...defaultProps} />);
 
-        const label = screen.getByLabelText(defaultProps.text);
-        fireEvent.click(label.closest('div')!);
+        const item = screen.getByTestId('todo-item');
+        fireEvent.click(item);
 
         expect(mockToggle).toHaveBeenCalledTimes(1);
     });
@@ -40,8 +40,8 @@ describe('TodoItem', () => {
     test('клик по кнопке удаления вызывает onRemove и не вызывает onToggle', () => {
         render(<TodoItem {...defaultProps} />);
 
-        const crossButton = screen.getByText('✖');
-        fireEvent.click(crossButton);
+        const clearButton = screen.getByTestId('clear-button');
+        fireEvent.click(clearButton);
 
         expect(mockRemove).toHaveBeenCalledTimes(1);
         expect(mockToggle).not.toHaveBeenCalled();

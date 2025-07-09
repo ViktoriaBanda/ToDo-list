@@ -11,7 +11,7 @@ interface Props {
 
 const TodoItem: React.FC<Props> = ({id, text, completed, onToggle, onRemove}) => {
     return (
-        <div className={styles.item} onClick={onToggle}>
+        <div data-testid="todo-item" className={styles.item} onClick={onToggle}>
             <div className={styles.checkbox}>
                 <input type="checkbox"
                        id={`completed-${id}`}
@@ -20,7 +20,7 @@ const TodoItem: React.FC<Props> = ({id, text, completed, onToggle, onRemove}) =>
                        }}/>
                 <label htmlFor={`completed-${id}`} className={completed ? styles.completed : ''}>{text}</label>
             </div>
-            <button type="button" className={styles.delete} onClick={(event) => {
+            <button data-testid="clear-button" type="button" className={styles.delete} onClick={(event) => {
                 event.stopPropagation();
                 onRemove();
             }}>

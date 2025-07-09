@@ -25,7 +25,7 @@ const TodoInput: React.FC<Props> = ({onAdd}) => {
                         type="text"
                         placeholder="Что нужно сделать?"
                         value={text}
-                        onChange={(e) => setText(e.target.value)}
+                        onChange={(event) => setText(event.target.value)}
                     />
                     { text && (
                         <button type="button" className={styles.clear} onClick={() => setText('')}>
