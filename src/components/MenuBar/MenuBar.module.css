@@ -42,7 +42,9 @@
     cursor: pointer;
     transition: opacity 0.3s ease;
 
-    &:hover {
-        opacity: 0.6;
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.6;
+        }
     }
 }

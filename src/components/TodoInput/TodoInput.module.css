@@ -45,8 +45,10 @@ form {
     background: #4C54F4;
     color: #fff;
 
-    &:hover:not(:disabled) {
-        opacity: 0.9;
+    @media (hover: hover) {
+        &:hover:not(:disabled) {
+            opacity: 0.9;
+        }
     }
 
     &:disabled {
@@ -63,7 +65,9 @@ form {
     top: 50%;
     transform: translateY(-50%);
 
-    &:hover {
-        opacity: 0.8;
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }
