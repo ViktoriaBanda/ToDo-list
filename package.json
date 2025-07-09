@@ -2,6 +2,7 @@
   "name": "mindbox-todo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://viktoriabanda.github.io/ToDo-list",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
