@@ -7,14 +7,13 @@ interface Todo {
 }
 
 interface Props {
-    todos: Todo[];
     activeCount: number;
     onClearCompleted: () => void;
     setFilter: (filter: 'all' | 'active' | 'completed') => void;
     filter: 'all' | 'active' | 'completed';
 }
 
-const MenuBar: React.FC<Props> = ({todos, activeCount, onClearCompleted, setFilter, filter}) => {
+const MenuBar: React.FC<Props> = ({activeCount, onClearCompleted, setFilter, filter}) => {
     return (
         <div className={styles.menu}>
             <div className={styles.buttons}>

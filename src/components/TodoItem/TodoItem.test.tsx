@@ -8,7 +8,7 @@ describe('TodoItem', () => {
 
     const defaultProps = {
         id: '1',
-        text: 'Тест задачи',
+        text: 'Task 1',
         completed: false,
         onToggle: mockToggle,
         onRemove: mockRemove,

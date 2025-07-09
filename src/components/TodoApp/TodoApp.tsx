@@ -21,7 +21,6 @@ const TodoApp: React.FC = () => {
         <div className={styles.app}>
             <TodoInput onAdd={addTodo} />
             <MenuBar
-                todos={todos}
                 activeCount={remainingCount}
                 onClearCompleted={clearCompleted}
                 setFilter={setFilter}

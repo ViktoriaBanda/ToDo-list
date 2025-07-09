@@ -17,7 +17,7 @@ const TodoInput: React.FC<Props> = ({onAdd}) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form data-testid="todo-form" onSubmit={handleSubmit}>
             <h3>Добавить заметку</h3>
             <div className={styles.input}>
                 <div className={styles.inputField}>
