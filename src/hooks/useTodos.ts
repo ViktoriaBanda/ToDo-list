@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 
 export type Todo = {
@@ -8,10 +8,23 @@ export type Todo = {
 };
 
 type Filter = 'all' | 'active' | 'completed';
+const STORAGE_KEY = 'my-todos';
 
 export function useTodos() {
-    const [todos, setTodos] = useState<Todo[]>([]);
+    const [todos, setTodos] = useState<Todo[]>(() => {
+        try {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            return stored ? JSON.parse(stored) : [];
+        } catch {
+            return [];
+        }
+    });
+
     const [filter, setFilter] = useState<Filter>('all');
+
+    useEffect(() => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+    }, [todos]);
 
     const addTodo = useCallback((text: string) => {
         if (!text.trim()) return;

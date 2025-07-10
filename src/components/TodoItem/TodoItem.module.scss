@@ -37,6 +37,8 @@ label {
     font-size: 16px;
     line-height: 1.2;
     cursor: pointer;
+    pointer-events: none;
+
     position: relative;
 
     input {

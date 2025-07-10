@@ -9,11 +9,13 @@ interface Props {
     onRemove: () => void;
 }
 
-const TodoItem: React.FC<Props> = ({text, completed, onToggle, onRemove}) => {
+const TodoItem: React.FC<Props> = ({id, text, completed, onToggle, onRemove}) => {
+    const inputId = `todo-${id}`;
+
     return (
         <div data-testid="todo-item" className={styles.item} onClick={onToggle}>
-            <label className={completed ? styles.completed : ''}>
-                <input type="checkbox" checked={completed} onChange={() => {
+            <label htmlFor={inputId} className={completed ? styles.completed : ''}>
+                <input id={inputId} type="checkbox" checked={completed} onChange={() => {
                 }}/>
                 <span>{text}</span>
             </label>
