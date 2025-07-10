@@ -40,7 +40,7 @@ export function useTodos() {
                 return todos.filter(todo => todo.completed);
             default:
                 return todos;
-        }Remove-Item -Recurse -Force .\docs
+        }
     }, [todos, filter]);
 
     const remainingCount = useMemo(
