@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TodoItem.module.css';
+import styles from './TodoItem.module.scss';
 
 interface Props {
     id: string;
@@ -9,17 +9,14 @@ interface Props {
     onRemove: () => void;
 }
 
-const TodoItem: React.FC<Props> = ({id, text, completed, onToggle, onRemove}) => {
+const TodoItem: React.FC<Props> = ({text, completed, onToggle, onRemove}) => {
     return (
         <div data-testid="todo-item" className={styles.item} onClick={onToggle}>
-            <div className={styles.checkbox}>
-                <input type="checkbox"
-                       id={`completed-${id}`}
-                       checked={completed}
-                       onChange={() => {
-                       }}/>
-                <label htmlFor={`completed-${id}`} className={completed ? styles.completed : ''}>{text}</label>
-            </div>
+            <label className={completed ? styles.completed : ''}>
+                <input type="checkbox" checked={completed} onChange={() => {
+                }}/>
+                <span>{text}</span>
+            </label>
             <button data-testid="clear-button" type="button" className={styles.delete} onClick={(event) => {
                 event.stopPropagation();
                 onRemove();

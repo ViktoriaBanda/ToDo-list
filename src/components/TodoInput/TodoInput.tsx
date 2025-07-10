@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './TodoInput.module.css';
+import styles from './TodoInput.module.scss';
 
 interface Props {
     onAdd: (text: string) => void;

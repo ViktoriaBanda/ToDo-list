@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import TodoItem from '../TodoItem/TodoItem';
-import styles from './TodoList.module.css';
+import styles from './TodoList.module.scss';
 import { Todo } from "../../hooks/useTodos";
 
 interface Props {

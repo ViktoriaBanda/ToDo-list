@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TodoApp.module.css';
+import styles from './TodoApp.module.scss';
 import TodoInput from '../TodoInput/TodoInput';
 import TodoList from '../TodoList/TodoList';
 import MenuBar from "../MenuBar/MenuBar";
